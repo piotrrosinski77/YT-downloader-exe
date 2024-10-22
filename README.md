@@ -1,8 +1,11 @@
 # YT-downloader-exe
 
-FFmpeg installation required
-On Ubuntu, you can use:
+FFmpeg installation required On Ubuntu, you can use:
+
+```bash 
 sudo apt-get install ffmpeg
+```
+
 On Windows, you can download it from: https://ffmpeg.org/download.html
 
 🎬 exe file letting you download any content from YouTube in mp4 or mp3
