@@ -1,0 +1,5 @@
+pytube
+tk
+moviepy
+pyttsx3
+PyPDF2
