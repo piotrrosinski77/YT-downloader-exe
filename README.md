@@ -13,6 +13,22 @@
 - **Extract Audio:** Download audio tracks in MP3 format for offline listening.
 - **User-Friendly Interface:** Simple and intuitive GUI for a smooth user experience.
 
+## Requirements
+
+To build and run the project from source or make any modifications, you'll need the following:
+
+1. **Python 3.x**
+   - Ensure Python is installed on your system. You can download it from [Python's official website](https://www.python.org/).
+
+2. **Required Libraries**
+   - Install necessary libraries using pip:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+Alternatively, manually install the following:
+- yt-dlp
+
 ## Installation
 
 1. **Download the Executable:**
