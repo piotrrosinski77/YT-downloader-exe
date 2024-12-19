@@ -1,0 +1,86 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# macOS system files
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Python
+*.py[cod]
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+
+# Virtual environments
+venv/
+.env/
+env/
+.venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# PyInstaller
+*.spec
+
+# Celery
+celerybeat-schedule
+*.pid
+
+# Logs
+*.log
+*.out
+*.err
+
+# Test outputs
+coverage/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# MyPy
+.mypy_cache/
+
+# Pytest
+.cache/
+
+# Profiling
+*.prof
+
+# Editor backups and settings
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+.idea/
+.vscode/
+*.code-workspace
+
+# Others
+*.DS_Store
+*.~lock.*
+Thumbs.db

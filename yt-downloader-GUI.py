@@ -3,6 +3,7 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 import threading
 import re
+from PIL import Image, ImageTk  # Pillow do obsługi obrazów
 
 def download_video(url, format_choice, progress_label, progress_bar):
         
@@ -68,33 +69,42 @@ def start_download():
     download_thread = threading.Thread(target=download_video, args=(video_url, format_choice, progress_label, progress_bar))
     download_thread.start()
 
-# Create the main window
+# Tworzenie głównego okna
 root = tk.Tk()
 root.title("YT Downloader")
+root.geometry("500x400")  # Ustaw rozmiar okna
 
-# Create and place the URL label and entry
-url_label = tk.Label(root, text="Enter URL:")
+# Wczytanie obrazu
+background_image = Image.open("bg.jpg")  # Ścieżka do pliku z obrazem
+background_photo = ImageTk.PhotoImage(background_image)
+
+# Ustawienie obrazu jako tła
+background_label = tk.Label(root, image=background_photo)
+background_label.place(relwidth=1, relheight=1)  # Dopasowanie obrazu do okna
+
+# Tworzenie i rozmieszczanie widżetów
+url_label = tk.Label(root, bg="#99494C", text="Enter URL:")
 url_label.pack(pady=5)
 url_entry = tk.Entry(root, width=50)
 url_entry.pack(pady=5)
 
-# Create and place the format selection radio buttons
-format_var = tk.StringVar(value='mp3')
-mp3_radio = tk.Radiobutton(root, text="mp3", variable=format_var, value='mp3')
-mp4_radio = tk.Radiobutton(root, text="mp4", variable=format_var, value='mp4')
+format_var = tk.StringVar(value='mp3')  # Domyślny format
+mp3_radio = tk.Radiobutton(root, bg="#99494C", text="mp3", variable=format_var, value='mp3')
+mp4_radio = tk.Radiobutton(root, bg="#99494C", text="mp4", variable=format_var, value='mp4')
 mp3_radio.pack(pady=5)
 mp4_radio.pack(pady=5)
 
-# Create and place the progress label
-progress_label = tk.Label(root, text="Postęp: 0%")
+progress_label = tk.Label(root, bg="#99494C", text="Postęp: 0%")
 progress_label.pack(pady=5)
 
-# Create and place the progress bar
 progress_bar = ttk.Progressbar(root, orient="horizontal", length=300, mode="determinate")
 progress_bar.pack(pady=5)
 
-# Create and place the download button
-download_button = tk.Button(root, text="Download", command=start_download)
+photo = tk.PhotoImage(file="button3.png")
+
+#download_button = tk.Button(root, text="Download", command=start_download)
+download_button = tk.Button(root, image = photo, text="Download", font=("Arial", 12), width=275, height=72, command=start_download)
+
 download_button.pack(pady=20)
 
 # Run the application
