@@ -3,8 +3,8 @@
 🎬 **YT-downloader-exe** is a standalone executable that allows you to download any content from YouTube in MP4 or MP3 format.
 
 <div align="center">
-    <img src="img/screenshot.png" alt="Application Screenshot 1" width="200" style="display: inline-block;"/>
-    <img src="img/screenshot_2.png" alt="Application Screenshot 2" width="390" style="display: inline-block;"/>
+    <img src="img/screenshot22.png" alt="Application Screenshot 1" width="360" style="display: inline-block;"/>
+    <img src="img/screenshot_222.png" alt="Application Screenshot 2" width="350" style="display: inline-block;"/>
 </div>
 
 ## Features
