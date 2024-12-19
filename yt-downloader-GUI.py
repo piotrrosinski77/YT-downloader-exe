@@ -72,7 +72,7 @@ def start_download():
 # Tworzenie głównego okna
 root = tk.Tk()
 root.title("YT Downloader")
-root.geometry("500x400")  # Ustaw rozmiar okna
+root.geometry("500x275")  # Ustaw rozmiar okna
 
 # Wczytanie obrazu
 background_image = Image.open("bg.jpg")  # Ścieżka do pliku z obrazem
@@ -83,9 +83,9 @@ background_label = tk.Label(root, image=background_photo)
 background_label.place(relwidth=1, relheight=1)  # Dopasowanie obrazu do okna
 
 # Tworzenie i rozmieszczanie widżetów
-url_label = tk.Label(root, bg="#99494C", text="Enter URL:")
+url_label = tk.Label(root, bg="#99494C", width=444, text="Enter URL from YouTube:")
 url_label.pack(pady=5)
-url_entry = tk.Entry(root, width=50)
+url_entry = tk.Entry(root, width=60)
 url_entry.pack(pady=5)
 
 format_var = tk.StringVar(value='mp3')  # Domyślny format
@@ -94,16 +94,16 @@ mp4_radio = tk.Radiobutton(root, bg="#99494C", text="mp4", variable=format_var, 
 mp3_radio.pack(pady=5)
 mp4_radio.pack(pady=5)
 
-progress_label = tk.Label(root, bg="#99494C", text="Postęp: 0%")
+progress_label = tk.Label(root, bg="#99494C", text="Progess: 0%")
 progress_label.pack(pady=5)
 
-progress_bar = ttk.Progressbar(root, orient="horizontal", length=300, mode="determinate")
+progress_bar = ttk.Progressbar(root, orient="horizontal", length=444, mode="determinate")
 progress_bar.pack(pady=5)
 
-photo = tk.PhotoImage(file="button3.png")
+photo = tk.PhotoImage(file="button4.png")
 
 #download_button = tk.Button(root, text="Download", command=start_download)
-download_button = tk.Button(root, image = photo, text="Download", font=("Arial", 12), width=275, height=72, command=start_download)
+download_button = tk.Button(root, image = photo, text="Download", font=("Arial", 12), width=186, height=29, command=start_download)
 
 download_button.pack(pady=20)
 
