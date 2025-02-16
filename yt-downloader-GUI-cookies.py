@@ -25,7 +25,7 @@ def download_video(url, format_choice, progress_label, progress_bar):
             eta = d.get("eta", "N/A")
 
             progress_label.config(
-                text=f"Pobieranie: {downloaded} | Szybkość: {speed} | ETA: {eta}s"
+                text=f"Downloading: {downloaded} | Speed: {speed} | ETA: {eta}s"
             )
             progress_bar["value"] = progress_value
             root.update_idletasks()
@@ -68,7 +68,7 @@ def download_video(url, format_choice, progress_label, progress_bar):
             messagebox.showerror("Download Error", str(e))
         finally:
             url_entry.delete(0, tk.END)
-            progress_label.config(text="Postęp: 0%")
+            progress_label.config(text="Progress: 0%")
             progress_bar["value"] = 0
 
 
@@ -87,26 +87,22 @@ def start_download():
     download_thread.start()
 
 
-# Tworzenie głównego okna
 root = tk.Tk()
 root.title("YT Downloader")
-root.geometry("500x275")  # Ustaw rozmiar okna
+root.geometry("500x275")
 
-# Wczytanie obrazu
-background_image = Image.open("bg.jpg")  # Ścieżka do pliku z obrazem
+background_image = Image.open("bg.jpg")
 background_photo = ImageTk.PhotoImage(background_image)
 
-# Ustawienie obrazu jako tła
 background_label = tk.Label(root, image=background_photo)
-background_label.place(relwidth=1, relheight=1)  # Dopasowanie obrazu do okna
+background_label.place(relwidth=1, relheight=1)
 
-# Tworzenie i rozmieszczanie widżetów
 url_label = tk.Label(root, bg="#99494C", width=444, text="Enter URL from YouTube:")
 url_label.pack(pady=5)
 url_entry = tk.Entry(root, width=60)
 url_entry.pack(pady=5)
 
-format_var = tk.StringVar(value="mp3")  # Domyślny format
+format_var = tk.StringVar(value="mp3")
 mp3_radio = tk.Radiobutton(
     root, bg="#99494C", text="mp3", variable=format_var, value="mp3"
 )
@@ -126,7 +122,6 @@ progress_bar.pack(pady=5)
 
 photo = tk.PhotoImage(file="button4.png")
 
-# download_button = tk.Button(root, text="Download", command=start_download)
 download_button = tk.Button(
     root,
     image=photo,
@@ -139,5 +134,4 @@ download_button = tk.Button(
 
 download_button.pack(pady=20)
 
-# Run the application
 root.mainloop()
