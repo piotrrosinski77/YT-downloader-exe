@@ -6,6 +6,11 @@ import re
 import os
 from PIL import Image, ImageTk
 
+# TO-DO:
+# - Add fancy font
+# - Resize the background image to fit the window
+# - Add a button to stop downloading process
+
 
 def download_video(url, format_choice, progress_label, progress_bar):
 
