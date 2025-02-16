@@ -1,19 +1,17 @@
 import yt_dlp
 import tkinter as tk
+import tkinter.font as tkFont
+from PIL import Image, ImageTk, ImageFont
 from tkinter import messagebox, ttk
 import threading
 import re
 import os
-from PIL import Image, ImageTk
-import tkinter.font as tkFont
 
 # TO-DO:
 # - Add fancy font
 # - Resize the background image to fit the window
 # - Add a button to stop downloading process
 # - resolve issue with regular expressions
-
-custom_font = tkFont.Font(file="RobotoMono-Medium.ttf", size=12)
 
 
 def download_video(url, format_choice, progress_label, progress_bar):
@@ -98,7 +96,21 @@ def start_download():
 
 root = tk.Tk()
 root.title("YT Downloader")
-root.geometry("500x275")
+root.geometry("600x300")
+
+# Załaduj czcionkę TTF
+font_path = "RobotoMono-Regular.ttf"
+custom_font = tkFont.Font(
+    family="Roboto Mono", size=12
+)  # Domyślnie, jeśli czcionka jest w systemie
+
+try:
+    pil_font = ImageFont.truetype(font_path, 12)  # Ładowanie czcionki przez PIL
+    custom_font = tkFont.Font(
+        family=pil_font.getname()[0], size=12
+    )  # Pobranie nazwy czcionki
+except Exception as e:
+    print(f"Błąd ładowania czcionki: {e}")
 
 background_image = Image.open("bg.jpg")
 background_photo = ImageTk.PhotoImage(background_image)
