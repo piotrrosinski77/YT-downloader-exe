@@ -5,12 +5,15 @@ import threading
 import re
 import os
 from PIL import Image, ImageTk
+import tkinter.font as tkFont
 
 # TO-DO:
 # - Add fancy font
 # - Resize the background image to fit the window
 # - Add a button to stop downloading process
 # - resolve issue with regular expressions
+
+custom_font = tkFont.Font(file="RobotoMono-Medium.ttf", size=12)
 
 
 def download_video(url, format_choice, progress_label, progress_bar):
@@ -103,22 +106,24 @@ background_photo = ImageTk.PhotoImage(background_image)
 background_label = tk.Label(root, image=background_photo)
 background_label.place(relwidth=1, relheight=1)
 
-url_label = tk.Label(root, bg="#99494C", width=444, text="Enter URL from YouTube:")
+url_label = tk.Label(
+    root, bg="#99494C", width=444, text="Enter URL from YouTube:", font=custom_font
+)
 url_label.pack(pady=5)
 url_entry = tk.Entry(root, width=60)
 url_entry.pack(pady=5)
 
 format_var = tk.StringVar(value="mp3")
 mp3_radio = tk.Radiobutton(
-    root, bg="#99494C", text="mp3", variable=format_var, value="mp3"
+    root, bg="#99494C", text="mp3", variable=format_var, font=custom_font, value="mp3"
 )
 mp4_radio = tk.Radiobutton(
-    root, bg="#99494C", text="mp4", variable=format_var, value="mp4"
+    root, bg="#99494C", text="mp4", variable=format_var, font=custom_font, value="mp4"
 )
 mp3_radio.pack(pady=5)
 mp4_radio.pack(pady=5)
 
-progress_label = tk.Label(root, bg="#99494C", text="Progess: 0%")
+progress_label = tk.Label(root, bg="#99494C", text="Progess: 0%", font=custom_font)
 progress_label.pack(pady=5)
 
 progress_bar = ttk.Progressbar(
@@ -132,7 +137,7 @@ download_button = tk.Button(
     root,
     image=photo,
     text="Download",
-    font=("Arial", 12),
+    font=custom_font,
     width=186,
     height=29,
     command=start_download,
